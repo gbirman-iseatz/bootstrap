@@ -1,0 +1,25 @@
+{
+  "name": "gbirman-iseatz-angular-bootstrap",
+  "version": "0.10.0",
+  "homepage": "https://github.com/gbirman-iseatz/bootstrap",
+  "authors": [
+    "Gil Birman <gbirman@iseatz.com>"
+  ],
+  "description": "Fork of angular-ui bootstrap for iSeatz",
+  "dependencies": {
+    "angular": ">=1"
+  },
+  "keywords": [
+    "angular",
+    "bootstrap",
+    "angular-ui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
