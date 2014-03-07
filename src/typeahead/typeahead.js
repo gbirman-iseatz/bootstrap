@@ -59,6 +59,8 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position', 'ui.bootstrap
 
       var appendToBody =  attrs.typeaheadAppendToBody ? originalScope.$eval(attrs.typeaheadAppendToBody) : false;
 
+      var popupTarget = attrs.typeaheadPopupTarget || false;
+
       //INTERNAL VARIABLES
 
       //model setter executed upon match selection
@@ -283,10 +285,14 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position', 'ui.bootstrap
       });
 
       var $popup = $compile(popUpEl)(scope);
-      if ( appendToBody ) {
+      if ( appendToBody && ! popupTarget ) {
         $document.find('body').append($popup);
       } else {
-        element.after($popup);
+        if (popupTarget) {
+          angular.element(document.getElementById(popupTarget)).append($popup);
+        } else {
+          element.after($popup);
+        }
       }
     }
   };

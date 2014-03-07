@@ -17,5 +17,10 @@
 
     <h4>Custom templates for results</h4>
     <pre>Model: {{customSelected | json}}</pre>
-    <input type="text" ng-model="customSelected" placeholder="Custom template" typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control">
+    <input type="text" ng-model="customSelected" placeholder="Custom template" typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" typeahead-popup-target="popup-target" class="form-control">
+
+    <div>
+      Custom Target:
+      <div id="popup-target"></div>
+    </div>
 </div>
